@@ -1,4 +1,4 @@
-object Two_To_One {
+object Two_To_One_7kyu {
   def longest(s1: String, s2: String): String = {
     var resultString = ""
     for (s1Letter <- s1) {

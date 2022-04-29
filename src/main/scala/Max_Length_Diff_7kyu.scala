@@ -1,4 +1,4 @@
-object Max_Length_Diff extends App {
+object Max_Length_Diff_7kyu extends App {
   def mxdiflg(a1: List[String], a2: List[String]): Int = {
     var list = List[Int]()
     if (a1.isEmpty || a2.isEmpty) return -1

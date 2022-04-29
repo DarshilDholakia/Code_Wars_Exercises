@@ -1,4 +1,4 @@
-object Snail extends App {
+object Snail_4kyu extends App {
   def snail(inputArr: List[List[Int]]): Array[Array[Int]] = {
     // create 2d array using input
     val n = inputArr.length

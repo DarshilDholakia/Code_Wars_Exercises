@@ -1,6 +1,6 @@
 import scala.collection.mutable.HashMap
 
-object Roman_Decoder extends App {
+object Roman_Decoder_6kyu extends App {
   def decode(roman: String): Int = {
     var keyMap = HashMap("I" -> 1, "V" -> 5, "X" -> 10, "L" -> 50, "C" -> 100, "D" -> 500, "M" -> 1000)
     var firstPoint = 0
@@ -36,6 +36,6 @@ object Roman_Decoder extends App {
     totalSum
   }
 
-  println(Roman_Decoder.decode("I"))
+  println(Roman_Decoder_6kyu.decode("I"))
 }
 

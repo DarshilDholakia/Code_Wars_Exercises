@@ -1,4 +1,4 @@
-object Vowel_Count extends App {
+object Vowel_Count_7kyu extends App {
   def getCount(inputStr: String): Int = {
     var counter = 0
     for {

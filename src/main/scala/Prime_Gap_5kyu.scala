@@ -1,4 +1,4 @@
-object Prime_Gap extends App {
+object Prime_Gap_5kyu extends App {
   def gap(g: Int, m: Long, n: Long): String = {
     def isPrime(input: Int): Boolean = {
       if (input <= 1) {

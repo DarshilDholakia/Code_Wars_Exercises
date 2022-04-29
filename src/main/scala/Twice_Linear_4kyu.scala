@@ -1,4 +1,4 @@
-object Twice_Linear extends App {
+object Twice_Linear_4kyu extends App {
   def dblLinear(n: Int): Int = {
     // y = 2 x + 1
     // z = 3 x + 1

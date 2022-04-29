@@ -1,4 +1,4 @@
-object Integer_Func_Cartesian {
+object Integer_Func_Cartesian_7kyu {
   def sumin(n: Int): BigInt = {
     // your code: f(x, y) = min(x, y)
     val x_list = List.range(1, n+1)

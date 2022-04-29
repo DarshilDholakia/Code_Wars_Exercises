@@ -1,4 +1,4 @@
-object Subtract_Sum extends App {
+object Subtract_Sum_8kyu extends App {
   val fruitList = List("1-kiwi",
     "2-pear",
     "3-kiwi",
