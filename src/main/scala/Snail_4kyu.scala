@@ -1,24 +1,80 @@
 object Snail_4kyu extends App {
-  def snail(inputArr: List[List[Int]]): Array[Array[Int]] = {
-    // create 2d array using input
-    val n = inputArr.length
-    val matrix = Array.ofDim[Int](n,n)
-    val flattenList = inputArr.flatten
+  def snail(argArray: List[List[Int]]): List[Int] = {
+    var input = argArray
 
-    for (i <- 0 until matrix.length; j <- 0 until matrix(0).length) {
-      for (index <- 0 until flattenList.length) {
-        matrix(i)(j) = flattenList(index)
+    val n = input.length
+    var resultList = List[Int]()
+//    var test = List(1,2,3,4)
+//    test = test.patch(2,Nil,1)
+//    println(test)
+//    println(test.length)
+//    var testList = List[Int]()
+//    val test2 = List(List(1,2),List(3,4),List(5,6))
+//    println(test2(2)(1))
+
+//    recursion(0)
+
+//    def recursion:(Int => Unit) = (rowIndex: Int) => {
+
+//      val upFunc = (rowIndex: Int) => {
+//        var upRowIndex = rowIndex
+//        var row = input(upRowIndex)
+//        while (upRowIndex > input.length) {
+//          row = input(upRowIndex)
+//          resultList = resultList :+ row(0)
+//          row = row.patch(0, Nil, 1)
+//          upRowIndex -= 1
+//        }
+//        recursion(upRowIndex + 1)
+//      }
+
+      val leftFunc = (rowIndex: Int) => {
+        var leftRowIndex = rowIndex
+        var row = input(leftRowIndex)
+        while (row.length > 0) {
+          resultList = resultList :+ row(row.length - 1)
+          row = row.patch(row.length - 1, Nil, 1) // remove 1 element at index = right_index within row of input with number row_index
+        }
+        leftRowIndex -= 1
+//        upFunc(leftRowIndex)
       }
-    }
-    matrix
 
-    val traversingRecursion = () => {
+      val downFunc = (rowIndex: Int) => {
+        var downRowIndex = rowIndex
+        var row = input(downRowIndex)
+        while (downRowIndex < input.length) {
+          row = input(downRowIndex)
+          resultList = resultList :+ row(row.length - 1)
+          row = row.patch(row.length - 1, Nil, 1)
+          downRowIndex += 1
+        }
+        leftFunc(downRowIndex - 1)
+      }
 
-    }
-    matrix
-    // use pointer to go right, down, left, up - fill resultArray as you go
-    // then use recursion to repeat
-    // stop when no numbers left
+//      var rightRowIndex = rowIndex
+//      var row = input(rightRowIndex)
+//      while (row.length > 0) {
+//        resultList = resultList :+ row(0)
+//        row = row.patch(0, Nil, 1) // remove 1 element at index = right_index within row of input with number row_index
+//      }
+//      rightRowIndex += 1
+//      downFunc(rightRowIndex)
+
+      val rightFunc = (rowIndex: Int) => {
+        var rightRowIndex = rowIndex
+        var row = input(rightRowIndex)
+        while (row.length > 0) {
+          resultList = resultList :+ row(0)
+          row = row.patch(0, Nil, 1) // remove 1 element at index = right_index within row of input with number row_index
+        }
+        rightRowIndex += 1
+        downFunc(rightRowIndex)
+      }
+
+//    }
+    rightFunc(0)
+    println(input)
+    resultList
   }
 
   println(snail(List(
